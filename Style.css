@@ -37,6 +37,12 @@ p {
     text-align: center;
 }
 
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 
 .section-title {
     font-size: 5rem;
@@ -147,15 +153,14 @@ h1 {
 }
 
 #about .container {
-    align-items: center;
     padding-block: 2.5rem;
     gap: 5rem;
 }
 
 #about .content {
+    display: flex;
     align-items: center;
     justify-content: center;
-    display: flex;
     width: 80%;
     flex-direction: column;
     gap: 3rem;
@@ -396,6 +401,40 @@ footer h3 {
 
 /* ==== Media Querry ======= */
 @media only screen and (min-width: 768px) {
+    /* ==== about ======== */
+    #about .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #about .profile {
+        display: grid;
+        align-items: center;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        'A B'
+        'A C';
+        padding: 0;
+    }
+
+    #about .profile-img {
+        justify-self: center;
+        grid-area: A;
+        width: auto;
+        align-items: center
+    }
+
+    #about .profile-info,
+    #about .profile-skills {
+        text-align: left;
+    }
+
+    #about .profile-skills ul {
+        align-self: flex-start;
+    }
+
+    /* ==== Portfolio ====== */
     #portfolio .projects {
         gap: 0;
     }
